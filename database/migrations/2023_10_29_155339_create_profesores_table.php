@@ -20,8 +20,11 @@ return new class extends Migration
             $table->string('password');
             $table->date('fecha_nacimiento');
             $table->string('titulo');
+            $table->string('universidad');
             $table->date('fecha_egreso');
             $table->string('especializacion')->nullable();
+            $table->date('updated_at');
+            $table->date('created_at');
         });
     }
 

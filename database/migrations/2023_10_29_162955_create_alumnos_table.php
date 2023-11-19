@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->date('fecha_nacimiento');
+            $table->date('updated_at');
+            $table->date('created_at');
         });
     }
 

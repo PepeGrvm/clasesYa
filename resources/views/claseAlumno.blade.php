@@ -10,14 +10,8 @@
       </div>
     </div>
 
-
     <script src="https://meet.jit.si/external_api.js"></script>
 
     <script src="{{ asset('js/claseAlumno.js') }}"></script>
-
-
-
-
-
 
 @endsection

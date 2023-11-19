@@ -45,7 +45,7 @@ var interfaceConfig = {
 
 const domain = 'meet.jit.si';
 const options = {
-    roomName: 'CLASSES_YA_2023',
+    roomName: getStoredRoomName() || '', // Try to get room name from storage,
     width: '100%',
     height: 500,
     parentNode: document.querySelector('#meet'),
@@ -57,3 +57,26 @@ const options = {
     interfaceConfigOverwrite: interfaceConfig,
 };
 const api = new JitsiMeetExternalAPI(domain, options);
+
+function getStoredRoomName() {
+    return localStorage.getItem('storedRoomName');
+}
+
+function setStoredRoomName(roomName) {
+    localStorage.setItem('storedRoomName', roomName);
+}
+
+function redirigir1() {
+    let identificador = document.getElementById("inputIngresoClaseAlum").value;
+
+    console.log(identificador);
+
+    if (identificador.trim() !== '') {
+        options.roomName = identificador;
+        setStoredRoomName(identificador); // Store room name
+        console.log(options.roomName);
+        window.location.href = 'clase-alumno';
+    } else {
+        alert("Please enter a room name.");
+    }
+}

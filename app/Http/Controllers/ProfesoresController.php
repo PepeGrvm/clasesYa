@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Profesores;
+use App\Profesores;
 use Illuminate\Http\Request;
 
 class ProfesoresController extends Controller
@@ -10,9 +10,10 @@ class ProfesoresController extends Controller
     /**
      * Display a listing of the resource.
      */
+
     public function index()
     {
-        //
+
     }
 
     /**
@@ -20,7 +21,7 @@ class ProfesoresController extends Controller
      */
     public function create()
     {
-        //
+        return view('registroProfe');
     }
 
     /**
@@ -28,7 +29,22 @@ class ProfesoresController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $profesor = new Profesores();
+
+        $profesor->nombre = $request->post('nombre');
+        $profesor->paterno = $request->post('paterno');
+        $profesor->materno = $request->post('materno');
+        $profesor->fecha_nacimiento = $request->post('fecha_nacimiento');
+        $profesor->email = $request->post('email');
+        $profesor->password = $request->post('password');
+        $profesor->titulo = $request->post('titulo');
+        $profesor->universidad = $request->post('universidad');
+        $profesor->fecha_egreso = $request->post('año_egreso');
+        $profesor->especializacion = $request->post('especializacion');
+        $profesor->save();
+
+        return redirect()->route('index.alumno');
+
     }
 
     /**

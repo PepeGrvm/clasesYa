@@ -1,5 +1,4 @@
 var interfaceConfig = {
-
     TOOLBAR_BUTTONS: [
         'microphone',
         'camera',
@@ -30,20 +29,20 @@ var interfaceConfig = {
         'mute-everyone',    //administrador
         'e2ee'
     ],
-
     SETTINGS_SECTIONS: [
         'devices',
         'language',
         'moderator',
         'profile',
-        // 'calendar'
+        'calendar'
     ],
     SHOW_CHROME_EXTENSION_BANNER: false
 };
 
 const domain = 'meet.jit.si';
+
 const options = {
-    roomName: 'CLASSES_YA_2023',
+    roomName: getStoredRoomName() || '', // Try to get room name from storage
     width: '100%',
     height: 500,
     parentNode: document.querySelector('#meet'),
@@ -54,4 +53,28 @@ const options = {
     noSsl: true,
     interfaceConfigOverwrite: interfaceConfig,
 };
+
+function getStoredRoomName() {
+    return localStorage.getItem('storedRoomName');
+}
+
+function setStoredRoomName(roomName) {
+    localStorage.setItem('storedRoomName', roomName);
+}
+
+function redirigir() {
+    let identificador = document.getElementById("inputIngresoClase").value;
+
+    console.log(identificador);
+
+    if (identificador.trim() !== '') {
+        options.roomName = identificador;
+        setStoredRoomName(identificador); // Store room name
+        console.log(options.roomName);
+        window.location.href = 'clase-profesor';
+    } else {
+        alert("Please enter a room name.");
+    }
+}
+
 const api = new JitsiMeetExternalAPI(domain, options);

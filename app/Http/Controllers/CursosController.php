@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cursos;
+use App\Cursos;
 use Illuminate\Http\Request;
 
 class CursosController extends Controller
@@ -20,7 +20,7 @@ class CursosController extends Controller
      */
     public function create()
     {
-        //
+        return view('registroCurso');
     }
 
     /**
@@ -28,7 +28,18 @@ class CursosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cursos = new Cursos();
+
+        $cursos->titulo = $request->post('titulo');
+        $cursos->fecha_inicio = $request->post('fecha_inicio');
+        $cursos->fecha_termino = $request->post('fecha_termino');
+        $cursos->asignatura = $request->post('asignatura');
+        $cursos->descripcion = $request->post('descripcion');
+        $cursos->inscritos = $request->post('inscritos');
+        $cursos->save();
+
+        return redirect()->route('index.alumno');
+
     }
 
     /**
