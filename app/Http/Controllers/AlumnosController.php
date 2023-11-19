@@ -13,6 +13,9 @@ class AlumnosController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function inicio(){
+        return view('inicioAlum');
+    }
     public function index()
     {
         $dataAlum = Alumnos::all();
@@ -44,7 +47,7 @@ class AlumnosController extends Controller
         $alumnos->fecha_nacimiento = $request->post('fecha_nacimiento');
         $alumnos->save();
 
-        return redirect()->route('index.alumno');
+        return redirect()->route('inicio.alumno');
 
     }
 

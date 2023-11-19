@@ -10,6 +10,9 @@ class ProfesoresController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function inicio(){
+        return view('inicioProfe');
+    }
     public function mostrarPerfil(){
         return view('perfilProfe');
     }
@@ -48,7 +51,7 @@ class ProfesoresController extends Controller
         $profesor->especializacion = $request->post('especializacion');
         $profesor->save();
 
-        return redirect()->route('index.alumno');
+        return redirect()->route('inicio.profe');
 
     }
 
