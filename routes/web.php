@@ -43,3 +43,7 @@ Route::get('/inicioProfe', function () {
 Route::get('/inicioAlum', function () {
     return view('inicioAlum');
 });
+
+Route::get('/login', function () {
+    return view('inicioSesion');
+});
