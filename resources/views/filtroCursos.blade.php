@@ -16,8 +16,8 @@
 </div>
 
 @foreach($dataCur as $dato)
-@if( $dato->asignatura ==  'matematicas')
-    <h1>Nuestro Mejores Profesores Para: {{ $dato->asignatura }}</h1>
+@if( $dato->asignatura != '')
+    <h1 style="padding-top: 50px">Cursos Destacados de {{ $dato->asignatura }}</h1>
     <div class="card" style="width: 16rem;">
         <div class="card-body">
             <h5 class="card-title">{{ $dato->titulo }}</h5>

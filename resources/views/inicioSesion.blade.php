@@ -14,10 +14,11 @@
                     <h3 class="text-center">Iniciar Sesión</h3>
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form method="POST" action="{{ route('login.alumno') }}">
+                        @csrf
                         <div class="mb-3">
-                            <label for="username" class="form-label">Usuario</label>
-                            <input type="text" class="form-control" id="username" name="username" required>
+                            <label for="email" class="form-label">Email</label>
+                            <input type="text" class="form-control" id="email" name="email" required>
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Contraseña</label>
@@ -27,10 +28,11 @@
                             <input type="checkbox" class="form-check-input" id="remember">
                             <label class="form-check-label" for="remember">Recordarme</label><br>
 
-                            <input type="checkbox" class="form-check-input" id="eresProfesor">
+                            <input type="checkbox" class="form-check-input" id="eresProfesor" name="eresProfesor">
                             <label class="form-check-label" for="remember">Eres Profesor?</label>
                         </div>
                         <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+
                     </form>
                     <button onclick="verificarCheckbox()" type="submit" class="btn btn-primary">Registarse</button>
 

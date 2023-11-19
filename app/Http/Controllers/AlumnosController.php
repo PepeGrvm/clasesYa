@@ -13,6 +13,23 @@ class AlumnosController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function login(Request $request)
+    {
+        $emailInput = $request->input('email');
+        $alumno = Alumnos::where('email', $emailInput)->first();
+        $profes = Profesores::where('email', $emailInput)->first();
+        if($alumno){
+            return redirect()->route('inicio.alumno');
+        } else {
+        if($profes){
+            return redirect()->route('inicio.profe');
+        }else{
+            return redirect()->route('index');
+
+        }
+        }
+    }
+
     public function inicio(){
         return view('inicioAlum');
     }
