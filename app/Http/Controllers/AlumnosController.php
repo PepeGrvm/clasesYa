@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Alumnos;
+use App\Cursos;
 use App\Profesores;
 
 use Illuminate\Http\Request;
@@ -16,8 +17,8 @@ class AlumnosController extends Controller
     {
         $dataAlum = Alumnos::all();
         $dataProf = Profesores::all();
-
-        return view('index',compact('dataAlum','dataProf'));
+        $dataCur = Cursos::all();
+        return view('index',compact('dataAlum','dataProf', 'dataCur'));
     }
 
     /**

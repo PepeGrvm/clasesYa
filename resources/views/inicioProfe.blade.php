@@ -1,5 +1,6 @@
 @extends('layout/plantilla')
 <link href="{{ asset('css/perfilProfe.css') }}" rel="stylesheet">
+<script src="{{ asset('js/perfilProfe.js') }}"></script>
 @section('tituloPagina','Clases Alumno')
 
 @section('contenido')
@@ -12,7 +13,7 @@
         <div class="row align-items-center flex-row-reverse">
             <div class="col-lg-6">
                 <div class="about-text go-to">
-                    <h3 class="dark-color">Bienvenido (usuario)</h3>
+                    <h3 class="dark-color">Bienvenido (Profesor)</h3>
                     <h6 class="theme-color lead">A Lead UX &amp; UI designer based in Canada</h6>
                     <p>I <mark>design and develop</mark> services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores. My passion is to design digital user experiences through the bold interface and meaningful interactions.</p>
                     <div class="row about-list">
@@ -92,8 +93,76 @@
     </div>
 </section>
 <section>
-    <h1>Proximas clases:</h1>
-    <div class="container" style="padding-top: 50px">
+    <div>
+        <h1>Solicitudes:</h1>
+        <div>
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item" id="datos-container4"></li>
+                        <li class="list-group-item" id="datos-container"></li>
+                        <li class="list-group-item" id="datos-container2"></li>
+                        <li class="list-group-item" id="datos-container3"></li>
+                      </ul> <br>
+
+                      <button class="btn btn-success">Aceptar</button>
+                      <button class="btn btn-danger" onclick="borrarAgenda()">Denegar</button>
+                </div>
+              </div>
+        </div>
+        <script>
+            // Recuperar el valor almacenado en localStorage
+            var mensajeAlumno = localStorage.getItem('comentarios');
+            var fecha = localStorage.getItem('fecha');
+            var tiempo = localStorage.getItem('tiempo');
+            var asignatura = localStorage.getItem('asignatura');
+
+            // Mostrar el valor en el contenedor
+            var datosContainer = document.getElementById('datos-container');
+            datosContainer.innerHTML = mensajeAlumno;
+            var datosContainer2 = document.getElementById('datos-container2');
+            datosContainer2.innerHTML = fecha;
+            var datosContainer3 = document.getElementById('datos-container3');
+            datosContainer3.innerHTML = tiempo;
+            var datosContainer4 = document.getElementById('datos-container4');
+            datosContainer4.innerHTML = asignatura;
+        </script>
+    </div>
+<div>
+
+    <h1>Proximas Clases:</h1>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Dia</th>
+            <th scope="col">Hora</th>
+            <th scope="col">Usuario</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+<div class="container" style="padding-top: 50px">
         <h3>Crear Sesión</h3>
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">

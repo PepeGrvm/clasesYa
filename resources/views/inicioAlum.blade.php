@@ -1,11 +1,7 @@
 @extends('layout/plantilla')
 <link href="{{ asset('css/perfilProfe.css') }}" rel="stylesheet">
 @section('tituloPagina','Clases Alumno')
-
 @section('contenido')
-
-
-
 <section class="section about-section gray-bg" id="about">
 
     <div class="container">

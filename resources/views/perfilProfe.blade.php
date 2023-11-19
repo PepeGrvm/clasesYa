@@ -1,6 +1,8 @@
 @extends('layout/plantilla')
 <link href="{{ asset('css/perfilProfe.css') }}" rel="stylesheet">
-@section('tituloPagina','Clases Alumno')
+
+<script src="{{ asset('js/perfilProfe.js') }}"></script>
+@section('tituloPagina','Perfil Profesor')
 
 @section('contenido')
 
@@ -89,4 +91,73 @@
         </div>
     </div>
 </section>
+<div>
+    <h1>Dias Disponibles:</h1>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Dia</th>
+            <th scope="col">Hora</th>
+            <th scope="col">Asignatura</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>15/06</td>
+            <td>15:00</td>
+            <td>Matematicas</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>18/06</td>
+            <td>15:30</td>
+            <td>Matematicas</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>13/07</td>
+            <td>15:30</td>
+            <td>Matematicas</td>
+          </tr>
+        </tbody>
+      </table></div>
+<div>
+    <h1>Agenda tu hora!</h1>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Contactar
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Comunicate con tu Profesor!</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group mb-3">
+                    <input id="asignaturaSoli" placeholder="Asignatura" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3">
+                    <input id="asignaturaFecha" placeholder="Asignatura" type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3">
+                    <input id="asignaturaTiempo" placeholder="Asignatura" type="time" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3">
+                    <input id="asignaturaComentarios" placeholder="Comentale a tu profesor sobre que te gustaria ver en la clase!" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button onclick="agendar()" type="button" class="btn btn-primary">Agendar</button>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
 @endsection

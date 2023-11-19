@@ -10,9 +10,14 @@ class ProfesoresController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function mostrarPerfil(){
+        return view('perfilProfe');
+    }
 
     public function index()
     {
+        $dataProf = Profesores::all();
+        return view('catalogoProfes',compact('dataProf'));
 
     }
 

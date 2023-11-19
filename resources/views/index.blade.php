@@ -122,7 +122,6 @@
 <h2 id="tituloProfe">Profesores más recientes</h2>
 
 <div class="containerPro">
-
     @foreach($dataProf as $dato)
             <div class="card" style="width: 16rem;">
                 <div class="card-body">
@@ -134,7 +133,6 @@
                 </div>
             </div>
         @endforeach
-
 </div>
 
 

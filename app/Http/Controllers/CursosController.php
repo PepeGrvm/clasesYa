@@ -10,9 +10,11 @@ class CursosController extends Controller
     /**
      * Display a listing of the resource.
      */
+
     public function index()
     {
-        //
+        $dataCur = Cursos::all();
+        return view('filtroCursos', compact('dataCur'));
     }
 
     /**
