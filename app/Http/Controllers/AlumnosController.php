@@ -13,6 +13,13 @@ class AlumnosController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function admin(){
+        $dataAlum = Alumnos::all();
+        $dataProf = Profesores::all();
+        return view('admin',compact('dataAlum','dataProf'));
+    }
+
+
     public function login(Request $request)
     {
         $emailInput = $request->input('email');
@@ -71,9 +78,11 @@ class AlumnosController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Alumnos $alumnos)
+    public function show($id)
     {
-        //
+        $dataAlum = Alumnos::find($id);
+        $dataProf = Profesores::find($id);
+        return view('adminEliminar',compact('dataAlum','dataProf'));
     }
 
     /**
@@ -95,7 +104,7 @@ class AlumnosController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Alumnos $alumnos)
+    public function destroy($id)
     {
         //
     }

@@ -89,6 +89,35 @@
 </section>
 <section>
     <h1>Proximas clases:</h1>
+    <div>
+            <div>
+                <div class="card" style="width: 18rem;" id="cartota">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" title="" alt="">
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item" id="datos-container"></li>
+                            <li class="list-group-item" id="datos-container2"></li>
+                        </ul> <br>
+
+                        <button class="btn btn-success">Aceptar</button>
+                        <button class="btn btn-danger" onclick="borrarAgenda()">Denegar</button>
+                    </div>
+                </div>
+            </div>
+            <script>
+                // Recuperar el valor almacenado en localStorage
+                var asignaturaInfo = localStorage.getItem('asignaturaInfo');
+                var mensajeInfo = localStorage.getItem('mensajeInfo');
+
+
+                // Mostrar el valor en el contenedor
+                var datosContainer = document.getElementById('datos-container');
+                datosContainer.innerHTML = asignaturaInfo;
+                var datosContainer2 = document.getElementById('datos-container2');
+                datosContainer2.innerHTML = mensajeInfo;
+            </script>
+    </div>
+
     <div class="container" style="padding-top: 50px">
         <h3>Unirse Sesión</h3>
         <!-- Button trigger modal -->
@@ -122,5 +151,6 @@
 </section>
 
 <script src="{{ asset('js/claseAlumno.js') }}"></script>
+<script src="{{ asset('js/perfilProfe.js') }}"></script>
 
 @endsection

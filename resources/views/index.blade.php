@@ -200,7 +200,9 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary">Contactar</button>
+
+                <a href="perfilProfe"><button type="button" class="btn btn-primary">Contactar</button>
+                </a>
             </div>
         </div>
     </div>

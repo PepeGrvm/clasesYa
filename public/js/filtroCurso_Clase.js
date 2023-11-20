@@ -12,7 +12,6 @@ function filtrar() {
 
     if (identificador.trim() !== '') {
         setAsignaturaFiltro(identificador); // Store room name
-        location.reload()
     } else {
         alert("Please enter a room name.");
     }

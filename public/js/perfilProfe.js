@@ -15,6 +15,16 @@ function borrarAgenda(){
     localStorage.removeItem('fecha')
     localStorage.removeItem('tiempo')
     localStorage.removeItem('comentarios')
-    location.reload()
+    document.getElementById("cartota").hidden = true;
+
+
+}
+
+function enviarMsje(){
+    let  asignaturaInfo = document.getElementById("asignaturaInfo").value;
+    let  mensajeCodigo = document.getElementById("codigoInvitacion").value;
+
+    localStorage.setItem('asignaturaInfo',asignaturaInfo)
+    localStorage.setItem('mensajeInfo',mensajeCodigo)
 }
 

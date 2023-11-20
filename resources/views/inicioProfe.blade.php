@@ -96,8 +96,8 @@
     <div>
         <h1>Solicitudes:</h1>
         <div>
-            <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
+            <div class="card" style="width: 18rem;" id="cartota">
+                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" title="" alt="">
                 <div class="card-body">
                     <ul class="list-group">
                         <li class="list-group-item" id="datos-container4"></li>
@@ -109,8 +109,9 @@
                       <button class="btn btn-success">Aceptar</button>
                       <button class="btn btn-danger" onclick="borrarAgenda()">Denegar</button>
                 </div>
-              </div>
+            </div>
         </div>
+
         <script>
             // Recuperar el valor almacenado en localStorage
             var mensajeAlumno = localStorage.getItem('comentarios');
@@ -147,17 +148,32 @@
             <td>Mark</td>
             <td>Otto</td>
             <td>@mdo</td>
+            <td>                        <!-- Button trigger modal -->
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+                    Enviar Invitación
+                </button>
+            </td>
           </tr>
           <tr>
             <th scope="row">2</th>
             <td>Jacob</td>
             <td>Thornton</td>
             <td>@fat</td>
+            <td>                        <!-- Button trigger modal -->
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+                    Enviar Invitación
+                </button>
+            </td>
           </tr>
           <tr>
             <th scope="row">3</th>
             <td colspan="2">Larry the Bird</td>
             <td>@twitter</td>
+            <td>                        <!-- Button trigger modal -->
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+                    Enviar Invitación
+                </button>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -215,7 +231,31 @@
             </div>
             </div>
         </div>
+    </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Comunicate con tu Alumno!</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group mb-3">
+                    <input id="asignaturaInfo" placeholder="Asignatura" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+
+                <div class="input-group mb-3">
+                    <input id="codigoInvitacion" placeholder="Codigo de Invitación" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button onclick="enviarMsje()" type="button" class="btn btn-primary">Agendar</button>
+            </div>
+        </div>
+        </div>
     </div>
 </section>
 
