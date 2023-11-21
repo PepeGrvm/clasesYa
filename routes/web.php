@@ -1,6 +1,5 @@
 <?php
 
-use App\Alumnos;
 use App\Http\Controllers\AlumnosController;
 use App\Http\Controllers\CursosController;
 use App\Http\Controllers\ProfesoresController;

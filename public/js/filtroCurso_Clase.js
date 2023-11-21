@@ -11,7 +11,9 @@ function filtrar() {
     console.log(identificador);
 
     if (identificador.trim() !== '') {
-        setAsignaturaFiltro(identificador); // Store room name
+        setAsignaturaFiltro(identificador);
+
+        window.location.href = 'filtro'; // Corrected this line
     } else {
         alert("Please enter a room name.");
     }

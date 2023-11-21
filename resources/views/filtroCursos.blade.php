@@ -15,31 +15,34 @@
     </div>
 </div>
 
+
+
 @foreach($dataCur as $dato)
-@if( $dato->asignatura != '')
+@if( $dato->asignatura == $asignaturaSeleccionada)
     <h1 style="padding-top: 50px">Cursos Destacados de {{ $dato->asignatura }}</h1>
     <div class="card" style="width: 16rem;">
         <div class="card-body">
             <h5 class="card-title">{{ $dato->titulo }}</h5>
-            <img src="{{ asset('img/2784445.png') }}" class="card-img-top" alt="...">
+            <img src="{{ asset('img/excel-logo-0.png') }}" class="card-img-top" alt="...">
             <h6>Titulo: {{$dato->asignatura}}</h6>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <p class="card-text">Descripcion:</p>
             <a href="#" data-bs-toggle="modal" onclick="modalFace()" data-bs-target="#staticBackdrop" class="btn btn-primary">Más Información</a>
         </div>
     </div>
 @endif
 @endforeach
 
-
+<br>
+<br>
 <h2 id="tituloProfe">Cursos que te podrian Interesar</h2>
 <div class="containerPro">
     @foreach($dataCur as $dato)
             <div class="card" style="width: 16rem;">
                 <div class="card-body">
                     <h5 class="card-title">{{ $dato->titulo }}</h5>
-                        <img src="{{ asset('img/2784445.png') }}" class="card-img-top" alt="...">
+                        <img src="{{ asset('img/excel-logo-0.png') }}" class="card-img-top" alt="...">
                     <h6>Titulo: {{$dato->asignatura}}</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text">Descripcion:</p>
                     <a href="#" data-bs-toggle="modal" onclick="modalFace()" data-bs-target="#staticBackdrop" class="btn btn-primary">Más Información</a>
                 </div>
             </div>

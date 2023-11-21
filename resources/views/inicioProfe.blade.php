@@ -105,9 +105,11 @@
                         <li class="list-group-item" id="datos-container2"></li>
                         <li class="list-group-item" id="datos-container3"></li>
                       </ul> <br>
-
-                      <button class="btn btn-success">Aceptar</button>
-                      <button class="btn btn-danger" onclick="borrarAgenda()">Denegar</button>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+                    Enviar Invitación
+                </button>
+                <button class="btn btn-danger" onclick="borrarAgenda()">Denegar</button>
                 </div>
             </div>
         </div>

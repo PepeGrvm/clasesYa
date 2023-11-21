@@ -3,6 +3,8 @@
 @section('tituloPagina','Clases Ya!')
 
 @section('contenido')
+<script src="{{ asset('js/filtroCurso_Clase.js') }}"></script>
+
 @extends('layout/navbar')
 
 <div class="container" style="padding-top: 80px;">
@@ -12,15 +14,13 @@
     <h6>🤝 Primera clase totalmente gratis</h6>
     <h6>🧑‍💻 Clases totalmente personalizadas</h6>
     <h6>🕺 Para todos los niveles</h6>
-    <br>
 
-    <div class="input-group mb-3">
-        <input id="buscarAsigna" type="text" class="form-control" placeholder="¿Qué aprendemos hoy?" aria-label="Recipient's username" aria-describedby="button-addon2">
-        <button class="btn btn-outline-primary" type="button" id="button-addon2" onclick="buscar()">Buscar</button>
+    <div class="container" style="padding-top: 80px;">
+        <div class="input-group mb-3">
+            <input id="filtrarAsignatura" type="text" class="form-control" placeholder="¿Qué aprendemos hoy?" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-outline-primary" type="button" id="button-addon2" onclick="filtrar()">Buscar</button>
+        </div>
     </div>
-
-
-</div>
 
 <div class="containerMaterias" style="padding: 90PX;">
     <h4>Nuestra Sección de Materias</h4>
@@ -128,7 +128,7 @@
                     <h5 class="card-title">{{ $dato->nombre }}</h5>
                         <img src="{{ asset('img/2784445.png') }}" class="card-img-top" alt="...">
                     <h6>Titulo: {{$dato->titulo}}</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text">Descripcion: </p>
                     <a href="#" data-bs-toggle="modal" onclick="modalFace()" data-bs-target="#staticBackdrop" class="btn btn-primary">Más Información</a>
                 </div>
             </div>
@@ -173,7 +173,8 @@
 
 <div class="container" style="padding-top: 40px;">
     <h3>¿Por qué clases YA!?</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et reiciendis aliquid, ut esse fugiat a repudiandae aspernatur iusto natus dolore unde officiis quasi aut nihil maiores voluptatum veniam. Facilis, tempore.</p>
+    <p>
+        Las clases online ofrecen una serie de ventajas significativas que hacen que la opción de "Clases Ya" sea una elección inteligente y conveniente. En primer lugar, la flexibilidad es clave. Con "Clases Ya", los estudiantes tienen la posibilidad de acceder a lecciones desde la comodidad de su hogar o cualquier lugar con conexión a internet, lo que elimina las barreras geográficas y optimiza el tiempo de aprendizaje.</p>
 </div>
 
 
@@ -191,9 +192,9 @@
             <div class="modal-body">
                 <!-- Contenido de la modal -->
                 <img src="{{ asset('img/2784445.png') }}" style="width: 200px" class="card-img-top" alt="...">
-                <p style="padding: 10px">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum natus omnis repellat voluptatem a ad nam corrupti consectetur dolorem assumenda iste, fugit pariatur aspernatur exercitationem quis eligendi quam facere laborum! Lorem ipsum dolor sit amet consectetur</p>
-                <br>
-                <p style="padding: 10px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, perspiciatis. $25.000</p>
+                <p style="padding: 10px">Hola, soy un apasionado profesor de matemáticas con una sólida formación académica y experiencia en la enseñanza. Con más de 7 años de experiencia, he trabajado con estudiantes de diversos niveles académicos, desde principiantes hasta avanzados.</p>
+
+                <p style="padding: 10px">Mis horarios son flexibles, y estoy comprometido a trabajar con los estudiantes para encontrar horarios que se adapten a sus necesidades. Por clase $25.000</p>
                 <p style="padding-left: 10px">Metodos de contacto</p>
                 <p style="padding-left: 10px">Fono: +56 9 12345678 <br> Email: Pepito@Carrion.cl <br> Linkedin: @PepitoProfe123</p>
                 <p></p>

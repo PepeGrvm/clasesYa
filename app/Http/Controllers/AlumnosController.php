@@ -31,7 +31,7 @@ class AlumnosController extends Controller
         if($profes){
             return redirect()->route('inicio.profe');
         }else{
-            return redirect()->route('index');
+            return redirect()->route('index.alumno');
 
         }
         }
@@ -40,12 +40,17 @@ class AlumnosController extends Controller
     public function inicio(){
         return view('inicioAlum');
     }
-    public function index()
+    public function index(Request $request)
     {
         $dataAlum = Alumnos::all();
         $dataProf = Profesores::all();
         $dataCur = Cursos::all();
-        return view('index',compact('dataAlum','dataProf', 'dataCur'));
+
+        $filtro = $request->input("buscarAsigna");
+
+        $datos = Cursos::where('campo1','like','%$filtro%');
+
+        return view('index',compact('dataAlum','dataProf', 'dataCur','datos'));
     }
 
     /**

@@ -99,7 +99,10 @@
                             <li class="list-group-item" id="datos-container2"></li>
                         </ul> <br>
 
-                        <button class="btn btn-success">Aceptar</button>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            ¡Unirse a la Sesion!
+                        </button>
                         <button class="btn btn-danger" onclick="borrarAgenda()">Denegar</button>
                     </div>
                 </div>
@@ -119,11 +122,6 @@
     </div>
 
     <div class="container" style="padding-top: 50px">
-        <h3>Unirse Sesión</h3>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Conectarse
-        </button>
 
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
