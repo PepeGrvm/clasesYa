@@ -14,7 +14,7 @@ class CursosController extends Controller
     public function index(Request $request)
     {
         $dataCur = Cursos::all();
-        $asignaturaSeleccionada = '2';
+        $asignaturaSeleccionada = 'ingles';
 
 
         return view('filtroCursos', compact('dataCur','asignaturaSeleccionada'));

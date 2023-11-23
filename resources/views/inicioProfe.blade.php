@@ -259,7 +259,14 @@
         </div>
         </div>
     </div>
+
+<div style="padding-top: 50px">
+    <h3>Crear Curso</h3>
+    <a href="registroCurso"><button class="btn btn-primary">Registrar tu Curso</button>
+    </a>
+</div>
 </section>
+
 
 <script src="{{ asset('js/claseProfesor.js') }}"></script>
 

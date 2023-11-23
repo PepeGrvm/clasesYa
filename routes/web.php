@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AlumnosController;
 use App\Http\Controllers\CursosController;
+use App\Http\Controllers\Filtro;
 use App\Http\Controllers\ProfesoresController;
 use Illuminate\Support\Facades\Route;
 
@@ -38,7 +39,6 @@ Route::get('/inicioProfe', [ProfesoresController::class, 'inicio'])->name('inici
 Route::get('/registroCurso',[CursosController::class, 'create'])->name('registro.curso');
 Route::post('/storeCurso',[CursosController::class, 'store'])->name('store.curso');
 Route::get('/filtro', [CursosController::class, 'index'])->name('cursos.index');
-
 
 
 Route::get('/login', function () {
