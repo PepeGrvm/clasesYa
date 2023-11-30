@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\AlumnosController;
 use App\Http\Controllers\CursosController;
-use App\Http\Controllers\Filtro;
 use App\Http\Controllers\ProfesoresController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +21,7 @@ Route::get('/clase-profesor', function () {
 
 //RUTAS ALUMNO
 Route::get('/index',[AlumnosController::class, 'index'])->name('index.alumno');
+Route::get('/',[AlumnosController::class, 'index'])->name('index.alumno');
 Route::get('/registroAlumno',[AlumnosController::class, 'create'])->name('registro.alumno');
 Route::get('/inicioAlum',[AlumnosController::class, 'inicio'])->name('inicio.alumno');
 Route::post('/storeAlumno',[AlumnosController::class, 'store'])->name('store.alumno');
